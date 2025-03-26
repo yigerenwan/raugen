@@ -22,7 +22,7 @@ with open("requirements.txt", "r") as fp:
         if line[0] != "#":
             dep_packages.append(str(line.strip()))
 
-version = "0.0.3"
+version = "0.0.4"
 
 setup(
     name="raugen",
