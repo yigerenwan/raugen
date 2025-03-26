@@ -43,13 +43,9 @@ setup(
     author_email="raugenai@gmail.com",
     package_dir={"": "."},
     package_data={".": ["*.txt"]},
-    exclude_package_data={
-        "raugen": ["research/*", "research/*/*"]
-    },
+    exclude_package_data={"raugen": ["research/*", "research/*/*"]},
     include_package_data=True,
-    packages=[
-        "raugen"
-    ],
+    packages=["raugen"],
     install_requires=dep_packages,
     setup_requires=["pytest-runner"],
     python_requires=">=3.10",
