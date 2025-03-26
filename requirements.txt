@@ -1,0 +1,13 @@
+accelerate==0.29.2
+auto-gptq==0.7.1
+ctranslate2==3.11.0
+numpy==1.24.2
+optimum==1.16.0
+pysbd==0.3.4
+scikit-learn==1.2.2
+sentencepiece==0.1.98
+sentence-splitter==1.4
+spacy==3.5.2
+torch==2.2.2
+tqdm==4.65.0
+transformers==4.39.3
