@@ -22,11 +22,11 @@ with open("requirements.txt", "r") as fp:
         if line[0] != "#":
             dep_packages.append(str(line.strip()))
 
-__version__ = "0.0.1"
+version = "0.0.1"
 
 setup(
     name="raugen",
-    version=__version__,
+    version=version,
     keywords="AI Agents",
     description="A framework for designing and creating AI Agents",
     long_description=open("README.md").read(),
