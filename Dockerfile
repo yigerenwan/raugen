@@ -1,8 +1,7 @@
-# Dockerfile for the raugen-docs-html
-FROM python:3.12.0
+FROM ubuntu 
 
 # Install dependencies required for Puppeteer
-RUN apt-get update && apt-get install -y apache2 --no-install-recommends \
+RUN apt update && apt install -y apache2 apache2-utils  \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the rest of the application code
@@ -10,3 +9,5 @@ COPY ./docs/_build/html /var/www/html/
 
 # Expose the port
 EXPOSE 80
+
+CMD [“apache2ctl”, “-D”, “FOREGROUND”]
