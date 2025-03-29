@@ -25,3 +25,6 @@ package/raugen/docs/up: ## Deploy documentation
 
 package/raugen/docs/down: ## Deploy documentation
 	@cd modules/raugen && docker compose down -v
+
+package/raugen/docs/logs:
+	@cd modules/raugen && docker compose logs -f
