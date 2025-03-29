@@ -1,0 +1,30 @@
+# version: '3'
+
+services:
+  raugen-docs-nginx:
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+    restart: unless-stopped
+    container_name: raugen-docs-nginx
+    hostname: raugen-docs-nginx
+    build:
+      context: ./
+      dockerfile: Dockerfile-nginx
+    ports:
+      - 80:80
+  
+  raugen-docs-html:
+    image: raugen-docs-html
+    deploy:
+      replicas: 5
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    hostname: raugen-docs-html
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"

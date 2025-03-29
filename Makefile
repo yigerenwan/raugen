@@ -19,4 +19,9 @@ package/raugen/docs: ## Build documentation
 	@cd modules/raugen/docs && sphinx-apidoc --force -o source ../raugen/
 	@cd modules/raugen/docs && make html
 	@(rm -r /var/www/html/raugen || true) && cd modules/raugen/docs/_build && cp -r html /var/www/html/raugen
-	@cd modules/raugen/docs/_build && scp -r html ubuntu@raugenai:/var/www
+
+package/raugen/docs/up: ## Deploy documentation
+	@cd modules/raugen && docker compose up -d --build
+
+package/raugen/docs/down: ## Deploy documentation
+	@cd modules/raugen && docker compose down -v
