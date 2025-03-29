@@ -19,3 +19,4 @@ package/raugen/docs: ## Build documentation
 	@cd modules/raugen/docs && sphinx-apidoc --force -o source ../raugen/
 	@cd modules/raugen/docs && make html
 	@(rm -r /var/www/html/raugen || true) && cd modules/raugen/docs/_build && cp -r html /var/www/html/raugen
+	@cd modules/raugen/docs/_build && scp -r html ubuntu@raugenai:/var/www
