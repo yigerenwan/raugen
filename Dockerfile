@@ -14,8 +14,5 @@ COPY ./docs/_build/html /var/www/html/
 RUN chown -R www-data:www-data /var/www/html/ \
     && chmod -R 755 /var/www/html/
 
-# Expose the port
-EXPOSE 3000
-
 # Configure Apache to run in foreground
 CMD ["apache2ctl", "-D", "FOREGROUND"]
